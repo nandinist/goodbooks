@@ -3,45 +3,87 @@ import "./styles.css";
 import { useState } from "react";
 
 const bookDB = {
-  javascript: [
-    { name: "Eloquent JavaScript", rating: "4/5" },
-    { name: "You Don't Know JS", rating: "3.5/5" }
+  NonFiction: [
+    { name: "A Brief History of Time", rating: "4.6/5" },
+    { name: "In Cold Blood", rating: "4.5/5" },
+    { name: "Never Cry Wolf", rating: "4.7/5" },
+    { name: "Out of Africa", rating: "4.5/5" },
+    { name: "The Beauty Myth", rating: "4.5/5" },
+    { name: "Bad Blood", rating: "4.6/5" },
+    { name: "The Diary of a Young Girl", rating: "4.6/5" }
   ],
 
-  fiction: [
+  Fiction: [
     {
-      name: "Shiva Trilogy",
-      rating: "5/5"
+      name: "The Atlas Six",
+      rating: "4.3/5"
     },
     {
-      name: "Harry Potter and the Sorcerer's Stone",
+      name: "Red, White & Royal Blue",
+      rating: "4.6/5"
+    },
+    {
+      name: "Verity",
+      rating: "4.3/5"
+    },
+    {
+      name: "Hopeless",
+      rating: "4.6/5"
+    },
+    {
+      name: "You've Reached Sam",
+      rating: "4.4/5"
+    },
+    {
+      name: "People Like Her",
+      rating: "4/5"
+    },
+    {
+      name: "The Promise",
       rating: "4.5/5"
     }
   ],
-  business: [
+  Historical: [
     {
-      name: "Never Split the Difference",
-      rating: "3.5/5"
+      name: "The Palace of Illusions",
+      rating: "4.6/5"
     },
     {
-      name: "Loonshots",
-      rating: "5/5"
+      name: "The Glass Palace",
+      rating: "4.5/5"
+    },
+    {
+      name: "Midnight’s Children",
+      rating: "4.3/5"
+    },
+    {
+      name: "A Suitable Boy",
+      rating: "4.4/5"
+    },
+    {
+      name: "The Namesake",
+      rating: "4.5/5"
+    },
+    {
+      name: "Ladies' Tailor",
+      rating: "4.6/5"
+    },
+    {
+      name: "The Last Queen",
+      rating: "4.6/5"
     }
   ]
 };
 
 export default function App() {
-  const [selectedGenre, setGenre] = useState("business");
+  const [selectedGenre, setGenre] = useState("Historical");
   function genreClickHandler(genre) {
     setGenre(genre);
   }
   return (
     <div className="App">
-      <h1> 📚 goodbooks </h1>
-      <p style={{ fontSize: "smaller" }}>
-        {" "}
-        Checkout my favorite books. Select a genre to get started{" "}
-      </p>
+      <h1> Goodbooks </h1>
+      <p> Checkout my favorite books. Select a genre to get started </p>
 
       <div>
         {Object.keys(bookDB).map((genre) => (
@@ -49,8 +91,8 @@ export default function App() {
             onClick={() => genreClickHandler(genre)}
             style={{
               cursor: "pointer",
-              background: "#E5E7EB",
-              borderRadius: "0.5rem",
+              background: "#c7d2fe",
+              borderRadius: "5px",
               padding: "0.5rem  1rem",
               border: "1px solid black",
               margin: "1rem 0.3rem"
